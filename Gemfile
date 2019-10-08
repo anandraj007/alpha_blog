@@ -10,7 +10,6 @@ gem 'rails', '~> 6.0.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
@@ -25,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
