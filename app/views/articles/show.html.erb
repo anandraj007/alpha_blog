@@ -1,8 +1,18 @@
 
-<h2 align="center">Title: <%= @article.title %><br></h2>
-<div class="row">
+<h2 class="text-center">Title: <%= @article.title %><br></h2>
+<div class="row py-3">
   <div class="card col-lg-8 offset-2">
     <div class="card-body">
+      <ul class='list-unstyled'>
+        <div class = row>
+          <div class='text-center col-12 py-2'>
+            <li class='py-2'> created by :</li>   
+            <li><%= link_to gravatar_for(@article.user),user_path(@article.user) %></li>
+            <li class='py-1 article-title'><%= link_to @article.user.username,user_path(@article.user) %></li> 
+            <li><small><%= pluralize(@article.user.articles.count,'article') if @article.user.articles %></small></li>   
+          </div>
+        </div>  
+      </ul>
       <h4>  <strong>Description </strong></h4>
       <br>
       <%= simple_format(@article.description) %>
