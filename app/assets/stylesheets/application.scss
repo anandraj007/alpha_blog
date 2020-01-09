@@ -5,9 +5,10 @@
   font-weight: bold;
 }
 #navbarSupportedContent .nav-link{
-  color: #eaeaea;
+  color: #D3D3D3;
 }
-#navbarSupportedContent a:hover{
+#navbarSupportedContent .nav-link:hover{
+  color: #ffffff;
   border-bottom: solid 1px burlywood;
 }
 .jumbotron{
