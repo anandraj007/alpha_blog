@@ -1,7 +1,7 @@
 
 <h2 class="text-center">Title: <%= @article.title %><br></h2>
 <div class="row py-3">
-  <div class="card col-lg-8 offset-2">
+  <div class="card bg-light col-lg-8 offset-2">
     <div class="card-body">
       <ul class='list-unstyled'>
         <div class = row>
@@ -16,11 +16,13 @@
       <h4>  <strong>Description </strong></h4>
       <br>
       <%= simple_format(@article.description) %>
-       <%= link_to "Edit Article ",edit_article_path(@article),class:"btn btn-sm btn-primary"%>
-       <%= link_to "Delete Article", article_path(@article), method: :delete,
-           data: { confirm: "Are you sure you want to delete the article?"},
-           class: "btn btn-sm btn-danger" %>
-       <%= link_to "View all Article",articles_path,class:"btn btn-sm btn-success" %>
+        <% if logged_in? && current_user == @article.user %>
+          <%= link_to "Edit Article ",edit_article_path(@article),class:"btn btn-sm btn-primary"%>
+          <%= link_to "Delete Article", article_path(@article), method: :delete,
+              data: { confirm: "Are you sure you want to delete the article?"},
+              class: "btn btn-sm btn-danger" %>
+        <% end %>
+        <%= link_to "View all Article",articles_path,class:"btn btn-sm btn-success" %>
     </div>
   </div>
 </div>
