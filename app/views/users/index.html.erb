@@ -4,7 +4,7 @@
  <% @users.each do |user|%>
     <ul class='list-unstyled'>
       <div class = row>
-        <div class='card card-body col-md-4 offset-4 col-sm-12'>
+        <div class='card card-body col-md-4 offset-4 col-sm-12 bg-light'>
           <li><%= link_to gravatar_for(user),user_path(user) %></li>
           <li class='py-1 article-title'><%= link_to user.username,user_path(user) %></li> 
           <li><small><%= pluralize(user.articles.count,'article') if user.articles %></small></li>   
