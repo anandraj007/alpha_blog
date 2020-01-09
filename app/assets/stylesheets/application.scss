@@ -4,9 +4,11 @@
   color:#ffffff;
   font-weight: bold;
 }
-
+#navbarSupportedContent .nav-link{
+  color: #eaeaea;
+}
 #navbarSupportedContent a:hover{
-  color:blue;
+  border-bottom: solid 1px burlywood;
 }
 .jumbotron{
   background-image: url(bg.jpeg);
