@@ -1,0 +1,26 @@
+<div class="container h-100 ">
+  <div class="row h-100 justify-content-center align-items-center ">
+    <div class ='card py-5 col-md-6 bg-light'>
+      <%= form_for(@category, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <div class="row">
+          <div class="col-form-label col-sm-1 offset-1 ">
+            <%= f.label :name, 'Name: ' %>
+          </div>
+          <div class="col-sm-8 offset-1 ">
+            <%= f.text_field :name, class: "form-control", placeholder: "Enter Category Name", autofocus: true %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="offset-3 col-sm-10">
+            <%= f.submit class: 'btn btn-primary btn-md' %>
+          </div>
+          <div class="col-xs-4 offset-4 py-3 my-2">
+            [
+            <%= link_to "Cancel request and return to articles listing", articles_path %>
+            ]
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
