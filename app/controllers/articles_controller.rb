@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article].inspect
     @article = Article.new(article_params)
-    @article.user = User.find(current_user)
+    @article.user = User.find(current_user.id)
     if @article.save
       flash[:success] ="Article is successfully created"
       redirect_to article_path(@article)
