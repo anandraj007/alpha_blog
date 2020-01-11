@@ -5,7 +5,7 @@
       <div class="card bg-danger">
         <div class="card-body">
           <div class="card-title">
-            <h2><%= pluralize(obj.errors.count,"error")%> prohbitted this article from saved </h2>
+            <h2><%= pluralize(obj.errors.count,"error")%> prohbitted this <%= obj.class.name %> from saved </h2>
           </div>
           <ul>
             <% obj.errors.full_messages.each do |msg| %>

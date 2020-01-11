@@ -1,12 +1,14 @@
 <h1 class="text-center py-2">All  Article Category </h1> 
 <div class="text-center ">
- <% @categories.each do |category|%>
-    <ul class='list-unstyled'>
-      <div class = row>
-        <div class='card card-body col-md-4 offset-4 col-sm-12 bg-light'>
-          <li class='py-1 article-title'><%= link_to "#{category.name}",category_path(category) %></li> 
-        </div>
-      </div>  
-    </ul>
- <% end %>
+  <div class='pagination justify-content-center py-2'> <%= will_paginate %></div>
+    <% @categories.each do |category|%>
+        <ul class='list-unstyled'>
+          <div class = row>
+            <div class='card card-body col-md-4 offset-4 col-sm-12 bg-light'>
+              <li class='py-1 article-title'><%= link_to "#{category.name}",category_path(category) %></li> 
+            </div>
+          </div>  
+        </ul>
+    <% end %>
+  <div class='pagination justify-content-center py-2'> <%= will_paginate %></div>
 </div>

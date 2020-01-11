@@ -15,4 +15,18 @@ class CreateCategoriesTest  < ActionDispatch::IntegrationTest
         end
         assert_template 'categories/index'
     end
+
+    test "validate new category form submission" do
+        get new_category_path
+        assert_equal 200, status
+
+        assert_template 'categories/new'
+        assert_no_difference "Category.count" do
+          post categories_path,params: {category: {name: ""}}
+        end
+        assert_template 'categories/new'
+        assert_select 'div.card-title'
+        assert_select 'li.card-text'
+    end
+
 end
