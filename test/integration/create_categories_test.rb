@@ -1,10 +1,12 @@
 require 'test_helper'
 def setup
     @category = Category.create(name: "sport")
+    @user = User.create(username: "john", email: "john@example.com", password: "password", admin: true)
 end
 
 class CreateCategoriesTest  < ActionDispatch::IntegrationTest
     test "get new category form and create category" do
+        sign_in_as(@user,"password")
         get new_category_path
         assert_equal 200, status
 
@@ -17,6 +19,7 @@ class CreateCategoriesTest  < ActionDispatch::IntegrationTest
     end
 
     test "validate new category form submission" do
+        sign_in_as(@user,"password")
         get new_category_path
         assert_equal 200, status
 
