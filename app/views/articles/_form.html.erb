@@ -10,17 +10,28 @@
           <div class="col-form-label col-sm-1 offset-1 ">
             <%= f.label :title %>
           </div>
-          <div class="col-sm-8">
-            <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+          <div class="col-sm-8 ">
+            <%= f.text_field :title, class: "form-control bg-light", placeholder: "Title of article", autofocus: true %>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-form-label col-sm-1 offset-1">
+          <div class="col-form-label col-sm-1 offset-1 ">
             <%= f.label :description %>
           </div>
-          <div class="col-sm-8">
-            <%= f.text_area :description, rows: 8, class: "form-control", placeholder: "Body of article" %>
+          <div class="col-sm-8 ">
+            <%= f.text_area :description, rows: 8, class: "form-control bg-light", placeholder: "Body of article" %>
+          </div>
+        </div>
+        <br>
+
+        <div class = "row">
+          <div class ="col col-sm-10 offset-2">
+            <%= f.collection_check_boxes :category_ids ,Category.all,:id,:name do |cb| %>
+            <div class="form-check form-check-inline">
+              <%= f.label(class: "form-check-label"){cb.check_box(class:"form-check-input ")}+ cb.text %>
+            </div>
+            <% end %>
           </div>
         </div>
         <br>

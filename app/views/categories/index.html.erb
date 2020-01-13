@@ -5,7 +5,8 @@
         <ul class='list-unstyled'>
           <div class = row>
             <div class='card card-body col-md-4 offset-4 col-sm-12 bg-light'>
-              <li class='py-1 article-title'><%= link_to "#{category.name}",category_path(category) %></li> 
+              <li class='py-1 article-title'><%= link_to "#{category.name}",category_path(category) %></li>
+              <li ><small><%= pluralize(category.articles.count," articles")%></small></li>
             </div>
           </div>  
         </ul>

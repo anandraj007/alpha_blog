@@ -13,9 +13,12 @@
           </div>
         </div>  
       </ul>
-      <h4>  <strong>Description </strong></h4>
+      <h4 class="text-center border-bottom py-1">  <strong>Description: </strong></h4>
       <br>
-      <%= simple_format(@article.description) %>
+      <%= simple_format(@article.description,class: "pb-3") %>
+        <% if @article.categories.any? %>
+          <p class="border-bottom border-top py-2 ">Categories: <%= render "categories/category",obj: @article.categories %></p>
+        <% end %>
         <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
           <%= link_to "Edit Article ",edit_article_path(@article),class:"btn btn-sm btn-primary"%>
           <%= link_to "Delete Article", article_path(@article), method: :delete,
